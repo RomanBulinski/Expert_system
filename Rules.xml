@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
+<Rules xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  
+  <Rule id="pivo">
+    <Question>What do you like to drink?</Question>
+    <Answer>
+      <Selection value="true">
+        <SingleValue value = "yes">
+      </Selection>
+      <Selection value="false">
+        <SingleValue value = "no">
+      </Selection>
+    </Answer>
+  </Rule>
+
+  <Rule id="upal">
+    <Question>Do you like hot weather?</Question>
+    <Answer>
+      <Selection value="true">
+        <SingleValue value = "yes">
+      </Selection>
+      <Selection value="false">
+        <SingleValue value = "no">
+      </Selection>
+    </Answer>
+  </Rule>
+
+  <Rule id="jedzenie">
+    <Question>Is good food important for you?</Question>
+    <Answer>
+      <Selection value="true">
+        <SingleValue value = "yes">
+      </Selection>
+      <Selection value="false">
+        <SingleValue value = "no">
+      </Selection>
+    </Answer>
+  </Rule>
+
+  <Rule id="Doy you like krasnale w ogrodzie?">
+    <Question>string</Question>
+    <Answer>
+      <Selection value="true">
+        <SingleValue value = "yes">
+      </Selection>
+      <Selection value="false">
+        <SingleValue value = "no">
+      </Selection>
+    </Answer>
+  </Rule>
+
+  <Rule id="luz">
+    <Question>Lubisz porządek czy luz?</Question>
+    <Answer>
+      <Selection value="true">
+          <MultipleValue value="free, luz, muzyke"/>
+      </Selection>
+      <Selection value="false">
+          <MultipleValue value="porzadek, ordung, przepisy "/>
+      </Selection>
+    </Answer>
+  </Rule>
+
+</Rules>
