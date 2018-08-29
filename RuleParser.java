@@ -64,7 +64,7 @@ public class RuleParser extends XMLParser {
                             // temp.setFactValueById(evalId, Boolean.valueOf(evalText) );
                             Value value = new SingleValue(singleValuString,Boolean.valueOf(selectionValue) );
 
-                          
+                       
                             
                         }
                         
