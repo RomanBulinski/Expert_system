@@ -3,41 +3,41 @@
 <Facts xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   
   <Fact id="niemcy">
-    <Description value="Germany">string</Description>
+    <Description value="Germany"/>
     <Evals>
-      <Eval>string</Eval>
+
       <Eval id="pivo">true</Eval>
       <Eval id="upal">false</Eval>
       <Eval id="jedzenie">false</Eval>
-      <Eval id="krasnale w ogrodzie">true</Eval>
+      <Eval id="krasnale">true</Eval>
       <Eval id="luz">false</Eval>
-      <Eval>string</Eval>
+  
     </Evals>
   </Fact>
 
   <Fact id="brytania">
-    <Description value="UK">string</Description>
+    <Description value="Stare imperium UK"/>
     <Evals>
-      <Eval>string</Eval>
+
       <Eval id="pivo">true</Eval>
       <Eval id="upal">false</Eval>
       <Eval id="jedzenie">false</Eval>
-      <Eval id="krasnale w ogrodzie">false</Eval>
+      <Eval id="krasnale">false</Eval>
       <Eval id="luz">true</Eval>
-      <Eval>string</Eval>
+
     </Evals>
   </Fact>
 
   <Fact id="wlochy">
-    <Description value="Italy">string</Description>
+    <Description value="sloneczna Italy"/>
     <Evals>
-      <Eval>string</Eval>
+
       <Eval id="pivo">false</Eval>
       <Eval id="upal">true</Eval>
       <Eval id="jedzenie">true</Eval>
-      <Eval id="krasnale w ogrodzie">false</Eval>
+      <Eval id="krasnale">false</Eval>
       <Eval id="luz">true</Eval>
-      <Eval>string</Eval>
+
     </Evals>
   </Fact>
 

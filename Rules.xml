@@ -3,63 +3,65 @@
 <Rules xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   
   <Rule id="pivo">
-    <Question>What do you like to drink?</Question>
+    <Question>What do you like to drink? (beer,tea)</Question>
     <Answer>
       <Selection value="true">
-        <SingleValue value = "yes">
+        <SingleValue value="beer"/>
       </Selection>
       <Selection value="false">
-        <SingleValue value = "no">
+        <SingleValue value="tea"/>
       </Selection>
     </Answer>
   </Rule>
 
   <Rule id="upal">
-    <Question>Do you like hot weather?</Question>
+    <Question>What kinde of wheather do you like? (hot/cold)</Question>
     <Answer>
       <Selection value="true">
-        <SingleValue value = "yes">
+        <SingleValue value="hot"/>
       </Selection>
       <Selection value="false">
-        <SingleValue value = "no">
+        <SingleValue value="cold"/>
       </Selection>
     </Answer>
   </Rule>
 
   <Rule id="jedzenie">
-    <Question>Is good food important for you?</Question>
+    <Question>Is good healthy food important for you? (yes/no) </Question>
     <Answer>
       <Selection value="true">
-        <SingleValue value = "yes">
+        <SingleValue value="yes"/>
       </Selection>
       <Selection value="false">
-        <SingleValue value = "no">
+        <SingleValue value="no"/>
       </Selection>
     </Answer>
   </Rule>
 
-  <Rule id="Doy you like krasnale w ogrodzie?">
-    <Question>string</Question>
+  <Rule id="krasnale">
+    <Question>Do you like artificial dwarfs in your garden? (yes/no)</Question>
     <Answer>
       <Selection value="true">
-        <SingleValue value = "yes">
+        <SingleValue value="yes"/>
       </Selection>
       <Selection value="false">
-        <SingleValue value = "no">
+        <SingleValue value="no"/>
       </Selection>
     </Answer>
   </Rule>
 
   <Rule id="luz">
-    <Question>Lubisz porządek czy luz?</Question>
+    <Question> Do you like order or looseness? (free, luz, muzyke, porzadek, ordyng, przepisy) </Question>
     <Answer>
       <Selection value="true">
-          <MultipleValue value="free, luz, muzyke"/>
+          <MultipleValue value ="free, luz, muzyke">"free, luz, muzyke"</MultipleValue>
       </Selection>
       <Selection value="false">
-          <MultipleValue value="porzadek, ordung, przepisy "/>
+          <MultipleValue value="xxx">"porzadek, ordung, przepisy"</MultipleValue>
       </Selection>
     </Answer>
   </Rule>
 
 </Rules>
+
+
