@@ -22,24 +22,31 @@ public class ESProvider {
         ruleParser.loadXmlDocument("Rules.xml");
         ruleRepository = ruleParser.getRuleRepository();
     }
-
-    
+ 
     public void collectAnswers (){
-        
         Scanner scanner = new Scanner(System.in);
-
         System.out.println(" \nI will help you find out which country is recommended for you on holidays.\n"+
-                            "Answer a few questions.\n");
-
+                            "Answer a few questions.\n"+
+                            "------------------------------------");
         Iterator iteratorPoPytaniach = ruleRepository.getIterator();
         while(iteratorPoPytaniach.hasNext()){
             Question question = (Question)iteratorPoPytaniach.next();
             System.out.println("Question : "+question.getQuestion());
         
-            String answerFromTerminal = scanner.nextLine();
-
             String id = question.getId();
-            Boolean evaluatedAnswer = question.getEvaluatedAnswer(answerFromTerminal);
+
+            boolean evaluatedAnswer = true;
+            boolean flag = true;
+
+            while(flag){
+                try{
+                    String answerFromTerminal = scanner.nextLine();
+                    evaluatedAnswer = question.getEvaluatedAnswer(answerFromTerminal);
+                    flag = false;
+                }catch( IllegalArgumentException x){
+                    System.out.println("Wrong answer, try again.");
+                }
+            }
             System.out.println(evaluatedAnswer);
             pytaniaIodpowiedzi.put(id,evaluatedAnswer);
         }
@@ -55,13 +62,19 @@ public class ESProvider {
         Iterator iteratorPoFactach = factRepository.getIterator();
         while(iteratorPoFactach.hasNext()){
             Fact temp  = (Fact)iteratorPoFactach.next();
-            if (temp.getPairIdValue().equals(pytaniaIodpowiedzi) ){
-                result = temp.getDescription() + " means : "+temp.getId() ;
+            Integer counter = 0;
+            for (String k : pytaniaIodpowiedzi.keySet()){
+                if (temp.getPairIdValue().get(k).equals(pytaniaIodpowiedzi.get(k))) {
+                    counter++;
+                }
             }
-    
+            if (counter.equals((Integer)5) ){
+                result = temp.getDescription() + " means, "+temp.getId();
+                break;
+            }else{
+                result = "nie ma rekomendacji.";
+            }
         }
-        System.out.println("I recommend : "+result);
         return  result;
     }
-
 }

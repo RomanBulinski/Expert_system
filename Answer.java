@@ -17,7 +17,7 @@ public class Answer {
         valueList.add(value);
     }
 
-    public boolean evaluateAnswerByInput(String input){
+    public boolean evaluateAnswerByInput (String input) throws IllegalArgumentException{
 
         String[] inputAnwser = input.split(",");
         List<String> inputAnwserInArrays = Arrays.asList(inputAnwser);

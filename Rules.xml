@@ -54,10 +54,10 @@
     <Question> Do you like order or looseness? (luz,luz / ord,ord ) </Question>
     <Answer>
       <Selection value="true">
-          <MultipleValue value ="luz,luz">luz,luz</MultipleValue>
+          <MultipleValue value ="true">luz,luz</MultipleValue>
       </Selection>
       <Selection value="false">
-          <MultipleValue value="ord,ord">ord,ord</MultipleValue>
+          <MultipleValue value="false">ord,ord</MultipleValue>
       </Selection>
     </Answer>
   </Rule>

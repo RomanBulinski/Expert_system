@@ -5,7 +5,7 @@ import java.util.*;
  */
 public class MultipleValue extends Value {
 
-    List<String> params;
+    List<String> params = new ArrayList<String>();
     boolean selectionType;
 
     public MultipleValue(List<String> params, boolean selectionType){
