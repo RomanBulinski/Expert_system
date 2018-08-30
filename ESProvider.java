@@ -2,67 +2,66 @@
 import java.util.*;
 import java.io.*;
 import java.util.Iterator;
-
+import java.util.Arrays;
 
 /**
  * ESProvider
  */
 public class ESProvider {
 
-        FactRepository factRepository;
-        RuleRepository ruleRepository;
+    FactRepository factRepository = new FactRepository();
+    RuleRepository ruleRepository = new RuleRepository();
+
+    Map < String, Boolean> pytaniaIodpowiedzi = new HashMap< String,Boolean >();
 
     public ESProvider(FactParser factParser, RuleParser ruleParser){
 
         factParser.loadXmlDocument("Facts.xml");
-        FactRepository listOfFact = factParser.getFactRepository();
-        Iterator iteratorPoFactach = listOfFact.getIterator();
-        
-        while(iteratorPoFactach.hasNext()){
-            Fact temp  = (Fact)iteratorPoFactach.next();
-            System.out.println(temp.getId()+" "+temp.getDescription());
-            System.out.println(temp.getIdSet());
-            System.out.println(temp.getVelueSet());
-            System.out.println("jedzenie : "+temp.getValueById("jedzenie"));
-        }
-        
-        System.out.println("------------------------------------------------------");   
-
+        factRepository = factParser.getFactRepository();
+        // FactRepository listOfFact = factParser.getFactRepository();
         ruleParser.loadXmlDocument("Rules.xml");
-        RuleRepository listOfRules = ruleParser.getRuleRepository();
-        Iterator iteratorPoPytaniach = listOfRules.getIterator();
-
-        while(iteratorPoPytaniach.hasNext()){
-            Question temp = (Question)iteratorPoPytaniach.next();
-            System.out.println("id: "+temp.getId()+" pytanie: "+temp.getQuestion());
-            System.out.println("    odpowiedz: "+temp.getAnswer() );
-
-            
-
-        } 
-
-
+        ruleRepository = ruleParser.getRuleRepository();
     }
 
-
-
-
-
-
+    
     public void collectAnswers (){
+        
+        Scanner scanner = new Scanner(System.in);
 
+        System.out.println(" \nI will help you find out which country is recommended for you on holidays.\n"+
+                            "Answer a few questions.\n");
+
+        Iterator iteratorPoPytaniach = ruleRepository.getIterator();
+        while(iteratorPoPytaniach.hasNext()){
+            Question question = (Question)iteratorPoPytaniach.next();
+            System.out.println("Question : "+question.getQuestion());
+        
+            String answerFromTerminal = scanner.nextLine();
+
+            String id = question.getId();
+            Boolean evaluatedAnswer = question.getEvaluatedAnswer(answerFromTerminal);
+            System.out.println(evaluatedAnswer);
+            pytaniaIodpowiedzi.put(id,evaluatedAnswer);
+        }
+        scanner.close();
     }
-
 
     public boolean getAnswerByQuestion(String question){
-
             return true;
     }
 
     public String evaluate(){
-
-        return "bla bla";
-}
-
+        String result = "";
+        Iterator iteratorPoFactach = factRepository.getIterator();
+        while(iteratorPoFactach.hasNext()){
+            Fact temp  = (Fact)iteratorPoFactach.next();
+            if (temp.getPairIdValue().equals(pytaniaIodpowiedzi) ){
+                result = temp.getDescription() + " means : "+temp.getId() ;
+            }
+    
+        }
+        System.out.println("I recommend : "+result);
+        return  result;
+    }
 
 }

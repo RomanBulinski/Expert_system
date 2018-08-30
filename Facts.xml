@@ -2,8 +2,8 @@
 <!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
 <Facts xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   
-  <Fact id="niemcy">
-    <Description value="Germany"/>
+  <Fact id="Niemcy">
+    <Description value="Zachodni sasiad z za Odry."/>
     <Evals>
 
       <Eval id="pivo">true</Eval>
@@ -15,8 +15,8 @@
     </Evals>
   </Fact>
 
-  <Fact id="brytania">
-    <Description value="Stare imperium UK"/>
+  <Fact id="Wielka Brytania">
+    <Description value="Stare wyspiarkie imperium."/>
     <Evals>
 
       <Eval id="pivo">true</Eval>
@@ -28,7 +28,7 @@
     </Evals>
   </Fact>
 
-  <Fact id="wlochy">
+  <Fact id="Italy">
     <Description value="sloneczna Italy"/>
     <Evals>
 
@@ -37,6 +37,19 @@
       <Eval id="jedzenie">true</Eval>
       <Eval id="krasnale">false</Eval>
       <Eval id="luz">true</Eval>
+
+    </Evals>
+  </Fact>
+
+    <Fact id="Mordor">
+    <Description value="kraina zla"/>
+    <Evals>
+
+      <Eval id="pivo">false</Eval>
+      <Eval id="upal">false</Eval>
+      <Eval id="jedzenie">false</Eval>
+      <Eval id="krasnale">false</Eval>
+      <Eval id="luz">false</Eval>
 
     </Evals>
   </Fact>

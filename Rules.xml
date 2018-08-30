@@ -3,7 +3,7 @@
 <Rules xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   
   <Rule id="pivo">
-    <Question>What do you like to drink? (beer,tea)</Question>
+    <Question>What do you like to drink? (beer/tea)</Question>
     <Answer>
       <Selection value="true">
         <SingleValue value="beer"/>
@@ -51,13 +51,13 @@
   </Rule>
 
   <Rule id="luz">
-    <Question> Do you like order or looseness? (free, luz, muzyke, porzadek, ordyng, przepisy) </Question>
+    <Question> Do you like order or looseness? (luz,luz / ord,ord ) </Question>
     <Answer>
       <Selection value="true">
-          <MultipleValue value ="free, luz, muzyke">"free, luz, muzyke"</MultipleValue>
+          <MultipleValue value ="luz,luz">luz,luz</MultipleValue>
       </Selection>
       <Selection value="false">
-          <MultipleValue value="xxx">"porzadek, ordung, przepisy"</MultipleValue>
+          <MultipleValue value="ord,ord">ord,ord</MultipleValue>
       </Selection>
     </Answer>
   </Rule>

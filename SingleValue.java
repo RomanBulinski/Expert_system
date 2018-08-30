@@ -5,12 +5,12 @@ import java.util.*;
  */
 public class SingleValue extends Value {
     
-    List<String> params;
+    List<String> params = new ArrayList<String>();
     boolean selectionType;
-    String param;
+    // String param;
     
     public SingleValue(String param, boolean selectionType){
-        this.param = param;
+        params.add(param);
         this.selectionType = selectionType;
     }
     
@@ -22,7 +22,4 @@ public class SingleValue extends Value {
         return selectionType;
     }
 
-    public String getParam(){
-        return param;
-    }
 }

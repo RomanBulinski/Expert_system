@@ -12,8 +12,6 @@ public class Question {
         this.id = id;
         this.question = question;
         this.answer = answer;
-    
-        
     }
 
     public String getId(){
@@ -26,15 +24,10 @@ public class Question {
 
     public Answer getAnswer(){
         return answer;
-
     }
 
     public boolean getEvaluatedAnswer(String input){
-        if ( answer.toString() == input ){
-            return true;
-        }else{
-            return false;
-        }
+        return answer.evaluateAnswerByInput(input);
     }
 
 }

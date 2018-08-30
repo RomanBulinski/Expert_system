@@ -44,7 +44,9 @@ public class Fact  {
         return descritption;
     }
 
-
-
+    
+    public Map<String , Boolean > getPairIdValue(){
+        return pairIdValue;
+    }
 
 }
