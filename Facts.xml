@@ -42,7 +42,7 @@
   </Fact>
 
   <Fact id="Mordor">
-    <Description value="Kraina Zla"/>
+    <Description value="Antyutopia"/>
     <Evals>
 
       <Eval id="pivo">false</Eval>
@@ -54,20 +54,20 @@
     </Evals>
   </Fact>
 
-  <Fact id="Hades">
-    <Description value="Undergound Land"/>
+  <Fact id="Poland">
+    <Description value="Polska"/>
     <Evals>
 
       <Eval id="pivo">true</Eval>
-      <Eval id="upal">true</Eval>
+      <Eval id="upal">false</Eval>
       <Eval id="jedzenie">true</Eval>
       <Eval id="krasnale">true</Eval>
-      <Eval id="luz">false</Eval>
+      <Eval id="luz">true</Eval>
 
     </Evals>
   </Fact>
 
-  <Fact id="xxx">
+  <Fact id="Utopia">
     <Description value="True Land"/>
     <Evals>
 

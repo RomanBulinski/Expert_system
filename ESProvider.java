@@ -18,7 +18,6 @@ public class ESProvider {
 
         factParser.loadXmlDocument("Facts.xml");
         factRepository = factParser.getFactRepository();
-        // FactRepository listOfFact = factParser.getFactRepository();
         ruleParser.loadXmlDocument("Rules.xml");
         ruleRepository = ruleParser.getRuleRepository();
     }
@@ -72,7 +71,7 @@ public class ESProvider {
                 result = temp.getDescription() + " means, "+temp.getId();
                 break;
             }else{
-                result = "nie ma rekomendacji.";
+                result = "I have no idea. Your your requirements are impossible to meet.";
             }
         }
         return  result;

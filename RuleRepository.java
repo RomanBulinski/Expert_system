@@ -11,7 +11,6 @@ public class RuleRepository{
 
     public RuleRepository(){
         rules = new ArrayList< Question>();
-
     }
 
     public Iterator getIterator(){
@@ -21,9 +20,8 @@ public class RuleRepository{
     private class QuestionIterator implements Iterator {
           
         int index = 0;
-
         public boolean hasNext(){
-            if( index < rules.size() ){
+            if( index < rules.size()){
                 return true;
             }
             return false;
@@ -44,24 +42,11 @@ public class RuleRepository{
     * metoda pomocnicza
     */
     public void printRulesRepository(){
-        // System.out.println("printRulesRepository");
-        for ( Question question : rules){
-            
+        for ( Question question : rules){ 
             System.out.println(question);
             System.out.println(question.getId());
             System.out.println(question.getQuestion());
-            // System.out.println(question.getAnswer());
         }
     }
-
-    // /** 
-    // * metoda pomocnicza
-    // */
-    // public void printIterator(){
-    //     while(questionIterator.hasNext()){
-    //         System.out.println(questionIterator.next());
-    //     }
-
-    // }
 
 }

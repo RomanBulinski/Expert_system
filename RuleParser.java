@@ -25,8 +25,6 @@ public class RuleParser extends XMLParser {
             DocumentBuilder db = dbf.newDocumentBuilder();
             Document doc = db.parse( xmlPath );
             NodeList ruleList = doc.getElementsByTagName("Rule");
-            // System.out.println("\nRoot element :" + doc.getDocumentElement().getNodeName());
-    
             for(int i=0;i<ruleList.getLength();i++){
                 Element rule = (Element) ruleList.item(i);
                 String ruleId = rule.getAttribute("id");
@@ -35,9 +33,7 @@ public class RuleParser extends XMLParser {
                 for (int z = 0; z < questionList.getLength(); ++z){
                     Element question = (Element) questionList.item(z);
                     String questionString = question.getFirstChild().getNodeValue();
-                 
                     Answer answer = new Answer();
-
                     Question questionObject = new Question( ruleId, questionString, answer );
                     ruleRepository.addQuestion(questionObject);
                 }
@@ -48,16 +44,12 @@ public class RuleParser extends XMLParser {
                 for(int i=0;i<ruleList.getLength();i++){
                     Element rule = (Element) ruleList.item(i);
                     NodeList selectionList = rule.getElementsByTagName("Selection");
-
                     Question tempQuestion = (Question)iteratorPoQuestion.next();
                     Answer answer = tempQuestion.getAnswer();
 
                     for (int j = 0; j < selectionList.getLength(); ++j){
                         Element select = (Element) selectionList.item(j);
                         String selectionValue = select.getAttribute("value");
-
-                        // System.out.println("Selection : "+ selectionValue);
-                        
                         NodeList singleValue = select.getElementsByTagName("SingleValue");
                         for (int x = 0; x < singleValue.getLength(); ++x){
                             Element singleValu = (Element) singleValue.item(x);
