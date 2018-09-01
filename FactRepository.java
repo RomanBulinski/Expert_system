@@ -5,22 +5,15 @@ import java.util.*;
 import java.io.*;
 
 
-/*
- * FactRepository - tworzez instacje Set do ktorej moge dodoac obiekty typu  Fact
- */
 public class FactRepository {
 
     ArrayList<Fact> facts;
-    /*
-    *  konstroktor inicjalizouje pole ( arrayliste  ) ktora przechowuje obiekty klasy Fact
-    */
+
     public FactRepository(){
         facts = new ArrayList<Fact>();
  
     }
-    /*
-    * iteruje po ArrayLisicie czyli po obiekcie FactREpository przechowujacej obiekty klasy Fact
-    */
+   
     public Iterator getIterator(){
         return new FactIterator();
     }
@@ -28,7 +21,7 @@ public class FactRepository {
     private class FactIterator implements Iterator {
         int index = 0;
         public boolean hasNext(){
-            if( index < facts.size() ){
+            if( index < facts.size()){
                 return true;
             }
             return false;
@@ -40,14 +33,13 @@ public class FactRepository {
             return null;
         }
     }
-    /*
-    *  w czasie dynamicznego tworzenia arraylisty dodaje do tej listy obiekty klasy Fact
-    */
+
     public void addFact(Fact fact){
         facts.add(fact);
     }
+
     /*
-    * metoda pomocnicza
+    * help metod
     */
     public void printFactRepository(){
         for ( Fact fact  : facts){
@@ -57,7 +49,7 @@ public class FactRepository {
     }
     
     /*
-    * metoda pomocnicza
+    * help metod
     */
     public Fact getFact(int index){
         return facts.get(index);

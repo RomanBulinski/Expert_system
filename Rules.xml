@@ -2,7 +2,7 @@
 <!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
 <Rules xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   
-  <Rule id="pivo">
+  <Rule id="drink">
     <Question>What do you like to drink? (beer/tea)</Question>
     <Answer>
       <Selection value="true">
@@ -14,7 +14,7 @@
     </Answer>
   </Rule>
 
-  <Rule id="upal">
+  <Rule id="heat">
     <Question>What kinde of wheather do you like? (hot/cold)</Question>
     <Answer>
       <Selection value="true">
@@ -26,8 +26,8 @@
     </Answer>
   </Rule>
 
-  <Rule id="jedzenie">
-    <Question>Is good healthy food important for you? (yes/no) </Question>
+  <Rule id="food">
+    <Question>Is healthy but tasteless food important for you? (yes/no) </Question>
     <Answer>
       <Selection value="true">
         <SingleValue value="yes"/>
@@ -38,7 +38,7 @@
     </Answer>
   </Rule>
 
-  <Rule id="krasnale">
+  <Rule id="dwarfs">
     <Question>Do you like artificial dwarfs in your garden? (yes/no)</Question>
     <Answer>
       <Selection value="true">
@@ -50,14 +50,14 @@
     </Answer>
   </Rule>
 
-  <Rule id="luz">
-    <Question> Do you like order or looseness? (luz,luz / ord,ord ) </Question>
+  <Rule id="order">
+    <Question> Do you like looseness and hot emotion or order and control? (looseness,hot emotions/order,control ) </Question>
     <Answer>
       <Selection value="true">
-          <MultipleValue value ="true">luz,luz</MultipleValue>
+          <MultipleValue value ="true">looseness,hot emotions</MultipleValue>
       </Selection>
       <Selection value="false">
-          <MultipleValue value="false">ord,ord</MultipleValue>
+          <MultipleValue value="false">order,control</MultipleValue>
       </Selection>
     </Answer>
   </Rule>

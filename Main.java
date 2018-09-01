@@ -17,13 +17,8 @@ public class Main {
 
         FactParser factParser = new FactParser();
         RuleParser ruleParser = new RuleParser();
-
         ESProvider esProvider = new ESProvider(factParser, ruleParser);
 
-        esProvider.collectAnswers();
-        System.out.println("---------------------------------------------");
-        System.out.println("I recommend for you : "+esProvider.evaluate());
-        System.out.println("---------------------------------------------");
-
+        esProvider.summary();
     }
 }

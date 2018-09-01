@@ -4,10 +4,6 @@ import java.io.*;
 import java.util.Objects;
 
 
-
-/**
- * Answer
- */
 public class Answer {
 
     List<Value> valueList = new ArrayList<Value>();
@@ -19,17 +15,14 @@ public class Answer {
 
     public boolean evaluateAnswerByInput (String input) throws IllegalArgumentException{
 
-        String[] inputAnwser = input.split(",");
-        List<String> inputAnwserInArrays = Arrays.asList(inputAnwser);
-        
         boolean result = true;
 
         Value tempValue1 = valueList.get(0);
         Value tempValue2 = valueList.get(1);
 
-        if( inputAnwserInArrays.equals(tempValue1.getInputPattern())){
+        if( (tempValue1.getInputPattern()).contains(input)){
             result = tempValue1.getSelectionType();
-        }else if( inputAnwserInArrays.equals(tempValue2.getInputPattern())){
+        }else if( (tempValue2.getInputPattern()).contains(input)){
             result = tempValue2.getSelectionType();
         }else{
             throw new IllegalArgumentException("It is not possible to compare.");
@@ -42,3 +35,4 @@ public class Answer {
     }
 
 }
+

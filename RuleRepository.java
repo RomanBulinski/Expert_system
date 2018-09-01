@@ -3,7 +3,7 @@ import java.util.Iterator;
 import java.util.*;
 
 /**
- * w konstr tworze hashmape do przechowawania pytan z xml
+ * in constructur make hashmap in order to keep question from xml
  */
 public class RuleRepository{
 
@@ -39,7 +39,7 @@ public class RuleRepository{
     }
 
     /** 
-    * metoda pomocnicza
+    * help metod
     */
     public void printRulesRepository(){
         for ( Question question : rules){ 

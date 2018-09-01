@@ -2,84 +2,70 @@
 <!-- Created with Liquid Technologies Online Tools 1.0 (https://www.liquid-technologies.com) -->
 <Facts xsi:noNamespaceSchemaLocation="schema.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   
-  <Fact id="Niemcy">
-    <Description value="Zachodni sasiad z za Odry."/>
+  <Fact id="Germany">
+    <Description value="the country of sausage and beer, "/>
     <Evals>
-
-      <Eval id="pivo">true</Eval>
-      <Eval id="upal">false</Eval>
-      <Eval id="jedzenie">false</Eval>
-      <Eval id="krasnale">true</Eval>
-      <Eval id="luz">false</Eval>
-  
+      <Eval id="drink">true</Eval>
+      <Eval id="heat">false</Eval>
+      <Eval id="food">false</Eval>
+      <Eval id="dwarfs">true</Eval>
+      <Eval id="order">false</Eval>
     </Evals>
   </Fact>
 
-  <Fact id="Wielka Brytania">
-    <Description value="Stare wyspiarkie imperium."/>
+  <Fact id="Great Britain">
+    <Description value="old island empire,"/>
     <Evals>
-
-      <Eval id="pivo">true</Eval>
-      <Eval id="upal">false</Eval>
-      <Eval id="jedzenie">false</Eval>
-      <Eval id="krasnale">false</Eval>
-      <Eval id="luz">true</Eval>
-
+      <Eval id="drink">true</Eval>
+      <Eval id="heat">false</Eval>
+      <Eval id="food">false</Eval>
+      <Eval id="dwarfs">false</Eval>
+      <Eval id="order">true</Eval>
     </Evals>
   </Fact>
 
   <Fact id="Italy">
-    <Description value="Sloneczny But"/>
+    <Description value="a place where a renaissance was born,"/>
     <Evals>
-
-      <Eval id="pivo">false</Eval>
-      <Eval id="upal">true</Eval>
-      <Eval id="jedzenie">true</Eval>
-      <Eval id="krasnale">false</Eval>
-      <Eval id="luz">true</Eval>
-
+      <Eval id="drink">false</Eval>
+      <Eval id="heat">true</Eval>
+      <Eval id="food">true</Eval>
+      <Eval id="dwarfs">false</Eval>
+      <Eval id="order">true</Eval>
     </Evals>
   </Fact>
 
   <Fact id="Mordor">
-    <Description value="Antyutopia"/>
+    <Description value="antyutopia,"/>
     <Evals>
-
-      <Eval id="pivo">false</Eval>
-      <Eval id="upal">false</Eval>
-      <Eval id="jedzenie">false</Eval>
-      <Eval id="krasnale">false</Eval>
-      <Eval id="luz">false</Eval>
-
+      <Eval id="drink">false</Eval>
+      <Eval id="heat">false</Eval>
+      <Eval id="food">false</Eval>
+      <Eval id="dwarfs">false</Eval>
+      <Eval id="order">false</Eval>
     </Evals>
   </Fact>
 
   <Fact id="Poland">
-    <Description value="Polska"/>
+    <Description value="the most beautiful country on earth,"/>
     <Evals>
-
-      <Eval id="pivo">true</Eval>
-      <Eval id="upal">false</Eval>
-      <Eval id="jedzenie">true</Eval>
-      <Eval id="krasnale">true</Eval>
-      <Eval id="luz">true</Eval>
-
+      <Eval id="drink">true</Eval>
+      <Eval id="heat">false</Eval>
+      <Eval id="food">true</Eval>
+      <Eval id="dwarfs">true</Eval>
+      <Eval id="order">true</Eval>
     </Evals>
   </Fact>
 
   <Fact id="Utopia">
-    <Description value="True Land"/>
+    <Description value="True Land, "/>
     <Evals>
-
-      <Eval id="pivo">true</Eval>
-      <Eval id="upal">true</Eval>
-      <Eval id="jedzenie">true</Eval>
-      <Eval id="krasnale">true</Eval>
-      <Eval id="luz">true</Eval>
-
+      <Eval id="drink">true</Eval>
+      <Eval id="heat">true</Eval>
+      <Eval id="food">true</Eval>
+      <Eval id="dwarfs">true</Eval>
+      <Eval id="order">true</Eval>
     </Evals>
   </Fact>
-
-
 
 </Facts>

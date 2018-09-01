@@ -12,7 +12,7 @@ public class ESProvider {
     FactRepository factRepository = new FactRepository();
     RuleRepository ruleRepository = new RuleRepository();
 
-    Map < String, Boolean> pytaniaIodpowiedzi = new HashMap< String,Boolean >();
+    Map < String, Boolean> answersAndQuestions = new HashMap< String,Boolean >();
 
     public ESProvider(FactParser factParser, RuleParser ruleParser){
 
@@ -24,19 +24,14 @@ public class ESProvider {
  
     public void collectAnswers (){
         Scanner scanner = new Scanner(System.in);
-        System.out.println(" \nI will help you find out which country is recommended for you on holidays.\n"+
-                            "Answer a few questions.\n"+
-                            "------------------------------------");
         Iterator iteratorPoPytaniach = ruleRepository.getIterator();
+        int counter = 1;
         while(iteratorPoPytaniach.hasNext()){
             Question question = (Question)iteratorPoPytaniach.next();
-            System.out.println("Question : "+question.getQuestion());
-        
+            System.out.println("  "+counter + ". Question : "+question.getQuestion());
             String id = question.getId();
-
             boolean evaluatedAnswer = true;
             boolean flag = true;
-
             while(flag){
                 try{
                     String answerFromTerminal = scanner.nextLine();
@@ -46,8 +41,9 @@ public class ESProvider {
                     System.out.println("Wrong answer, try again.");
                 }
             }
-            System.out.println(evaluatedAnswer);
-            pytaniaIodpowiedzi.put(id,evaluatedAnswer);
+            System.out.println("  "+evaluatedAnswer);
+            answersAndQuestions.put(id,evaluatedAnswer);
+            counter++;
         }
         scanner.close();
     }
@@ -62,8 +58,8 @@ public class ESProvider {
         while(iteratorPoFactach.hasNext()){
             Fact temp  = (Fact)iteratorPoFactach.next();
             Integer counter = 0;
-            for (String k : pytaniaIodpowiedzi.keySet()){
-                if (temp.getPairIdValue().get(k).equals(pytaniaIodpowiedzi.get(k))) {
+            for (String k : answersAndQuestions.keySet()){
+                if (temp.getPairIdValue().get(k).equals(answersAndQuestions.get(k))) {
                     counter++;
                 }
             }
@@ -71,9 +67,32 @@ public class ESProvider {
                 result = temp.getDescription() + " means, "+temp.getId();
                 break;
             }else{
-                result = "I have no idea. Your your requirements are impossible to meet.";
+                result = "I have no idea. Your requirements are impossible to meet.";
             }
         }
         return  result;
+    }
+
+    public void printDottedLine(){
+        System.out.println("\n");
+        for (int  i =0; i < 5; i++){
+            System.out.print("-");
+        }
+        System.out.print(" * ");
+        for (int  i =0; i < 5; i++){
+            System.out.print("-");
+        }
+        System.out.println("\n");
+    }
+    
+    public void summary(){
+        printDottedLine();
+        System.out.println( "  I will help you find out which country is recommended for you on holidays.\n"+
+        "  Answer a few questions.");
+        printDottedLine();
+        collectAnswers();
+        printDottedLine();
+        System.out.print("  I recommend for you : "+ evaluate());
+        printDottedLine();
     }
 }
